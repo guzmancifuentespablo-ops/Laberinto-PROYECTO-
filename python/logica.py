@@ -1,4 +1,4 @@
-# Proyecto: Integrador (Pablo Guzman   Andres Simba  Kenneth  Viteri)
+# # PROYECTO INTEGRADOR JUEGO LABERINTO  equipo 4  (Pablo Guzman   Andres Simba  Kenneth  Viteri)
 # Responsable: Equipo 4
 # Archivo: logica.py
 # Descripción: Controla los movimientos del jugador.
