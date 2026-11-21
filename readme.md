@@ -32,22 +32,9 @@ CSV: almacenamiento e intercambio de información entre los módulos.
 GitHub: control de versiones y colaboración del equipo.
 
 4. Estructura del proyecto
+![Uploading image.png…]()
 
-ProyectoJuego/
-│
-├── python_juego/
-│   ├── juego.py
-│   ├── interfaz.py
-│   ├── logica.py
-│   └── historial.csv
-│
-├── cpp_datos/
-│   ├── main.cpp
-│   ├── ranking.cpp
-│   └── nodo.h
-│
-├── LICENSE
-└── README.md
+
 
 5. Integrantes y autoría
 
