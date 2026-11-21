@@ -38,7 +38,12 @@ int main() {
 
     Partida* cabeza = nullptr;
 
-    ifstream archivo("../python_juego/historial.csv");
+    ifstream archivo("../python/historial.csv");
+
+    if (!archivo.is_open()) {
+        cout << "Error: no se pudo abrir el historial." << endl;
+        return 1;
+    }
 
     string linea;
 
@@ -50,24 +55,36 @@ int main() {
 
         stringstream separador(linea);
 
-        Partida nueva;
-        string apodo, resultado;
+        Partida nueva{};
+        string apodo, nivelTexto, resultado, tiempoTexto;
 
         getline(separador, apodo, ',');
-        separador >> nueva.nivel;
-        separador.ignore(1);
+        getline(separador, nivelTexto, ',');
         getline(separador, resultado, ',');
-        separador >> nueva.tiempo;
+        getline(separador, tiempoTexto, ',');
 
-        if (apodo.empty() || resultado.empty()) {
+        if (apodo.empty() || nivelTexto.empty() ||
+            resultado.empty() || tiempoTexto.empty()) {
             continue;
         }
 
-        strncpy(nueva.apodo, apodo.c_str(), 20);
-        nueva.apodo[20] = '\0';
+        try {
+            nueva.nivel = stoi(nivelTexto);
+            nueva.tiempo = stoi(tiempoTexto);
+        }
+        catch (...) {
+            continue;
+        }
 
-        strncpy(nueva.resultado, resultado.c_str(), 9);
-        nueva.resultado[9] = '\0';
+        if (nueva.nivel < 1 || nueva.nivel > 3 ||
+            nueva.tiempo < 0 ||
+            (resultado != "VICTORIA" && resultado != "DERROTA") ||
+            apodo.length() > 20) {
+            continue;
+        }
+
+        strcpy(nueva.apodo, apodo.c_str());
+        strcpy(nueva.resultado, resultado.c_str());
 
         insertarPartida(cabeza, nueva);
     }
@@ -75,6 +92,13 @@ int main() {
     archivo.close();
 
     mostrarPartidas(cabeza);
+
+    // Liberar memoria de la lista enlazada
+    while (cabeza != nullptr) {
+        Partida* temporal = cabeza;
+        cabeza = cabeza->siguiente;
+        delete temporal;
+    }
 
     return 0;
 }
