@@ -1,7 +1,3 @@
-// # PROYECTO INTEGRADOR JUEGO LABERINTO  equipo 4  (Pablo Guzman   Andres Simba  Kenneth  Viteri)
-// Responsable: Equipo 4
-// Archivo: ranking.cpp
-// Descripción: Gestión de partidas y organización del ranking.
 
 #include <iostream>
 #include <cstring>
