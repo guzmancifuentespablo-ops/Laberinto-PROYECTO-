@@ -1,9 +1,4 @@
 
-# # PROYECTO INTEGRADOR JUEGO LABERINTO  equipo 4  (Pablo Guzman   Andres Simba  Kenneth  Viteri)
-# Responsable: Equipo 4
-# Archivo: juego.py
-# Descripción: Archivo principal que ejecuta el juego.
-
 import pygame
 
 from interfaz import MAPA, jugador, TAMANO_CELDA, dibujar
