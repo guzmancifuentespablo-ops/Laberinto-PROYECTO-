@@ -1,7 +1,3 @@
-# # PROYECTO INTEGRADOR JUEGO LABERINTO  equipo 4  (Pablo Guzman   Andres Simba  Kenneth  Viteri) 
-# Responsable: Equipo 4
-# Archivo:  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>     interfaz.py       <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-# Descripción: Ventana gráfica y representación del laberinto.
 
 import pygame
 
